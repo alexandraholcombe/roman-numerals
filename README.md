@@ -47,15 +47,15 @@ etc...
 
 ## Instructions
 
-* _Enter a year in the box and hit Submit_
+* _Clone to local machine, open in browser. Enter number less than 4000._
 
 ## Known Bugs
 
-_None. You are welcomed to report._
+_None._
 
 ## Support and contact details
 
-_If you have any questions, comments, ideas or anything else please contact us at meiqianye@gmail.com or alexandra.holcombe@gmail.com_
+_If you have any questions, comments, ideas or anything else please contact us at mija.sand@gmail.com or alexandra.holcombe@gmail.com_
 
 ## Technologies Used
 
@@ -69,4 +69,7 @@ _*JavaScript_
 
 _*jQuery v3.1.1_
 
-Copyright (c) 2017 **_Renee Mei && Allie Holcombe_**
+## License
+_MIT_
+
+Copyright (c) 2017 **_Sandro Mijatovic && Allie Holcombe_**
