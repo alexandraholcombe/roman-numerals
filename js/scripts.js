@@ -58,20 +58,24 @@ var xAppender = function(input){
 
 var tens = function(input) {
   result = "";
-  for(var index = 0; index < arabicEquivalents.length; index++) {
-    if (input <= 3) {
-      xAppender(input);
-      return result;
-    } else if(input => 5 && input < 9) {
-      input = input - 5;
-      result = "V";
-      iAppender(input);
-      return result;
-    } else {
-      return "Your number sucks";
-    }
-  };
+  if (input === 4) {
+    result = "XL";
+    return result;
+  } else if (input === 9) {
+    result = "XC";
+    return result;
+  } else if (input <= 3) {
+    xAppender(input);
+    return result;
+  } else if(input => 5 && input < 9) {
+    input = input - 5;
+    result = "L";
+    xAppender(input);
+    return result;
+  }
 };
+
+
 
 var ones = function(input) {
   result = "";
