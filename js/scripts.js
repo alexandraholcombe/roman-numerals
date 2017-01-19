@@ -14,6 +14,11 @@ var placeConverter = function (char) {
 }
 
 var placeAssigner = function(input) {
+  finalAnswer = "";
+  thousandsPlace = "";
+  hundredsPlace = "";
+  tensPlace = "";
+  onesPlaces = "";
   if (input.toString().length === 4) {
     thousandsPlace = placeConverter(0)
     hundredsPlace = placeConverter(1);
@@ -30,12 +35,10 @@ var placeAssigner = function(input) {
     onesPlace = placeConverter(0);
   };
   // console.log(ones(onesPlace));
-  finalAnswer = thousands(thousandsPlace) + hundreds(hundredsPlace) + tens(tensPlace) + ones(onesPlace)
+  finalAnswer = thousands(thousandsPlace) + hundreds(hundredsPlace) + tens(tensPlace) + ones(onesPlace);
   return finalAnswer;
   finalAnswer = "";
 }
-
-
 
 var baseChecker = function(input){
   for(var index = 0; index < arabicEquivalents.length; index++) {
@@ -44,7 +47,6 @@ var baseChecker = function(input){
     }
   }
 };
-
 
 var iAppender = function(input){
   for (var i = 1; i <= input; i++) {
