@@ -1,7 +1,8 @@
+//Business Logic
 var userInput = 0
 var romanNumerals = ["I", "V", "X", "L", "C", "D", "M"];
 var arabicEquivalents = [1, 5, 10, 50, 100, 500, 1000];
-var result = "I";
+var result = 0;
 var thousandsPlace = 0;
 var hundredsPlace = 0;
 var tensPlace = 0;
@@ -29,8 +30,9 @@ var placeAssigner = function(input) {
     onesPlace = placeConverter(0);
   };
   // console.log(ones(onesPlace));
-  finalAnswer = tens(tensPlace) + ones(onesPlace)
+  finalAnswer = thousands(thousandsPlace) + hundreds(hundredsPlace) + tens(tensPlace) + ones(onesPlace)
   return finalAnswer;
+  finalAnswer = "";
 }
 
 
@@ -56,6 +58,47 @@ var xAppender = function(input){
   };
 };
 
+var cAppender = function(input){
+  for (var i = 1; i <= input; i++) {
+    result += "C";
+  };
+};
+
+var mAppender = function(input) {
+  for (var i = 1; i <= input; i++) {
+    result += "M";
+}
+}
+
+var thousands = function(input) {
+  result = "";
+  if (input <= 3) {
+    mAppender(input);
+    return result;
+  } else {
+    "Too high, bitch"
+  }
+};
+
+var hundreds = function(input) {
+  result = "";
+  if (input === 4) {
+    result = "DC";
+    return result;
+  } else if (input === 9) {
+    result = "CM";
+    return result;
+  } else if (input <= 3) {
+    cAppender(input);
+    return result;
+  } else if(input => 5 && input < 9) {
+    input = input - 5;
+    result = "L";
+    cAppender(input);
+    return result;
+  }
+};
+
 var tens = function(input) {
   result = "";
   if (input === 4) {
@@ -74,8 +117,6 @@ var tens = function(input) {
     return result;
   }
 };
-
-
 
 var ones = function(input) {
   result = "";
@@ -99,6 +140,7 @@ var ones = function(input) {
   }
 };
 
+//User Interface Logic
 
 $(function() {
   $("form").submit(function() {
